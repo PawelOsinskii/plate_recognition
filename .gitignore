@@ -1,0 +1,3 @@
+.idea/
+static/images/*
+!static/images/.gitkeep
