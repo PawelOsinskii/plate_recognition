@@ -20,7 +20,7 @@ def process(image):
     detect.threshold(car_plate_detected_path, image_with_threshold)
     resized_image_path = path_build(4, image_id)
     detect.resize(original_image_path, resized_image_path, IMAGE_SIZE, top_x, top_y, bottom_x, bottom_y)
-    text = recognize(resized_image_path)
+    text = recognize(resized_image_path, original_image_path)
 
     return {
         'id': image_id,

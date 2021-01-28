@@ -15,8 +15,6 @@ def upload():
     if not request.files:
         return "Image is required", 400
     image = request.files["car"]
-    #if not image.content_length:
-       # return "Image is empty", 400
 
     result = process(image)
     return jsonify(result)

@@ -4,6 +4,7 @@ const result = document.getElementById('text');
 
 form.onsubmit = async (e) => {
     e.preventDefault();
+    result.innerHTML = "Loading...";
     fetch('/upload', {
         method: 'POST',
         body: new FormData(form)
