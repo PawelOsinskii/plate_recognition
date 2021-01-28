@@ -9,7 +9,7 @@ form.onsubmit = async (e) => {
     }).then(async response => {
         const {id, text} = await response.json();
         form.remove();
-        steps.innerHTML = [1, 2, 3].map(step => {
+        steps.innerHTML = [1, 2, 3, 4].map(step => {
             return `<h2>Step ${step}</h2><img alt="Step" src="static/images/${id}-step-${step}.jpg"/>`;
         })
     }).catch(e => {

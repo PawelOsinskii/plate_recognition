@@ -13,10 +13,12 @@ def process(image):
     image.save(original_image_path)
 
     car_plate_detected_path = path_build(2, image_id)
-    detect.detect(original_image_path, car_plate_detected_path, IMAGE_SIZE)
+    top_x, top_y, bottom_x, bottom_y = detect.detect(original_image_path, car_plate_detected_path, IMAGE_SIZE)
 
     image_with_threshold = path_build(3, image_id)
     detect.threshold(car_plate_detected_path, image_with_threshold)
+    resized_image_path = path_build(4, image_id)
+    detect.resize(original_image_path, resized_image_path, IMAGE_SIZE, top_x, top_y, bottom_x, bottom_y)
 
 
 
