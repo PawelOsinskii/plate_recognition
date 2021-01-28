@@ -9,7 +9,7 @@ function httpGet()
     document.getElementById("result").innerHTML = xmlHttp.responseText ;
     const img = document.createElement("img");
 
-    img.src = "C:\\Users\\posinski\\PycharmProjects\\plate_recognition\\images_to_algorithm\\cropped.jpg";
+    img.src = "../static/images_to_algorithm/obraz.jpg";
     const src = document.getElementById("x");
 
     src.appendChild(img);
