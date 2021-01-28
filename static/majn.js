@@ -1,20 +1,24 @@
+const form = document.getElementById('form');
+const steps = document.getElementById('steps');
+const result = document.getElementById('text');
 
-function httpGet()
-{
-    const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", '/get_plate', false ); // false for synchronous request
+form.onsubmit = async (e) => {
+    e.preventDefault();
+    fetch('/upload', {
+        method: 'POST',
+        body: new FormData(form)
+    }).then(async response => {
+        const {id, text} = await response.json();
+        form.remove();
+        result.innerHTML = `<h1>Car plate: ${text}</h1>`;
+        steps.innerHTML = [1, 2, 3, 4].map(step => {
+            return `<h2>Step ${step}</h2><img alt="Step" src="static/images/${id}-step-${step}.jpg"/>`;
+        })
+    }).catch(e => {
+        alert(e)
+    });
 
-    xmlHttp.send( null );
-    console.log(xmlHttp.responseText);
-    document.getElementById("result").innerHTML = xmlHttp.responseText ;
-    const img = document.createElement("img");
 
-    img.src = "../static/images_to_algorithm/obraz.jpg";
-    const src = document.getElementById("x");
+    return false;
+};
 
-    src.appendChild(img);
-}
-
-function showImage(){
-
-}
