@@ -1,2 +1,6 @@
 # plate_recognition
-I have build model CNN. here i only load this model to web application in flask and i am using tesseract
+Aplikacja do wykrywania tablic rejestracyjnych na zdjęciach. 
+Zbudowany model konwolucyjnej sieci neuronowej w innym projekcie. Tutaj wczytujemy ten model.
+Aplikacja znajduje tablice rejestracyjna, a następnie wrzuca tą tablice w algorytm Tesseract. 
+
+Użytkownik wrzuca zdjęcie samochodu, nastepnie wyświetlają mu się wsyztskie kroki począwszy od znalezienia tablicy poprzez sieć oraz wyplucie wyniku. 
